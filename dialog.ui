@@ -183,19 +183,6 @@
 }</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>220</y>
-     <width>75</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
-   </property>
-  </widget>
   <widget class="QGraphicsView" name="graphicsView_3">
    <property name="geometry">
     <rect>
