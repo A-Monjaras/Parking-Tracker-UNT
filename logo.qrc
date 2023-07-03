@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>unts-genericnewsimage_unt.png</file>
+    </qresource>
+</RCC>

@@ -7,7 +7,7 @@ ParkingDialog::ParkingDialog(QWidget *parent) :
     ui(new Ui::ParkingDialog)
 {
     ui->setupUi(this);
-    QPixmap logo(":/img/Images/unts-genericnewsimage_unt.png");
+    QPixmap logo(":/img/unts-genericnewsimage_unt.png");
     ui->UNTlogo->setPixmap(logo);
 }
 

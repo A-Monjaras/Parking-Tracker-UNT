@@ -9,7 +9,7 @@ LoginPage::LoginPage(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix("C:/Users/aldom/Desktop/3444Files/unts-genericnewsimage_unt.png");
+    QPixmap pix(":/img/unts-genericnewsimage_unt.png");
     ui -> untlogo  ->setPixmap(pix);
     ui->greenTop->setStyleSheet("background-color: #00853e;");
     ui->whiteBack->setStyleSheet("background-color: white;");
