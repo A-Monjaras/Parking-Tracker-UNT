@@ -2,6 +2,7 @@
 #define LOGINPAGE_H
 
 #include <QMainWindow>
+#include "DatabaseManager.h"
 #include "seconddialog.h"
 #include "parkingdialog.h"
 QT_BEGIN_NAMESPACE
@@ -23,5 +24,6 @@ private:
     Ui::LoginPage *ui;
     secondDialog *secDialog;
     ParkingDialog *park;
+    DatabaseManager* dbManager;
 };
 #endif // LOGINPAGE_H
