@@ -22,6 +22,7 @@ private slots:
 private:
     Ui::secondDialog *ui;
     ParkingDialog *park;
+    secondDialog *back;
 };
 
 #endif // SECONDDIALOG_H

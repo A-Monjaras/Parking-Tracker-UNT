@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     loginpage.cpp \
+    mainwindow.cpp \
     seconddialog.cpp \
     CarProfile.cpp \
     dialog.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     loginpage.h \
+    mainwindow.h \
     seconddialog.h \
     CarProfile.h \
     dialog.h \
@@ -31,6 +33,7 @@ HEADERS += \
 
 FORMS += \
     loginpage.ui \
+    mainwindow.ui \
     seconddialog.ui \
     dialog.ui \
     parkingdialog.ui

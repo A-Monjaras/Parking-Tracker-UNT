@@ -1,5 +1,11 @@
 <RCC>
     <qresource prefix="/img">
-        <file>unts-genericnewsimage_unt.png</file>
+        <file>Icons'/exit-24.png</file>
+        <file>Icons'/map-3-24.png</file>
+        <file>Images/unts-genericnewsimage_unt.png</file>
+        <file>Icons'/menu-4-24.png</file>
+        <file>Icons'/table-24.png</file>
+        <file>Icons'/user-24.png</file>
+        <file>Icons'/circle_with_lettermark_wordmark_diving_eagle_green.png</file>
     </qresource>
 </RCC>

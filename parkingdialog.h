@@ -1,6 +1,7 @@
 #ifndef PARKINGDIALOG_H
 #define PARKINGDIALOG_H
 
+
 #include <QDialog>
 
 namespace Ui {
@@ -15,8 +16,12 @@ public:
     explicit ParkingDialog(QWidget *parent = nullptr);
     ~ParkingDialog();
 
+private slots:
+    void on_backButton_clicked();
+
 private:
     Ui::ParkingDialog *ui;
+
 };
 
 #endif // PARKINGDIALOG_H

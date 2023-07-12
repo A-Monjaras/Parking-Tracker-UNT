@@ -22,208 +22,231 @@
   <property name="styleSheet">
    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 255, 255, 255), stop:.75 rgba(0,133,62, 255));</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLabel" name="UNTlogo">
-     <property name="minimumSize">
-      <size>
-       <width>400</width>
-       <height>150</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgba(0, 133, 62,0);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QTableWidget" name="parkingTable">
-     <property name="minimumSize">
-      <size>
-       <width>500</width>
-       <height>500</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>1000</width>
-       <height>550</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="autoFillBackground">
-      <bool>true</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+  <widget class="QLabel" name="UNTlogo">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>39</y>
+     <width>400</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 133, 62,0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="parkingTable">
+   <property name="geometry">
+    <rect>
+     <x>9</x>
+     <y>195</y>
+     <width>986</width>
+     <height>500</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>500</width>
+     <height>500</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1000</width>
+     <height>550</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
 background-color: rgba(0, 85, 0,0);
 alternate-background-color: rgb(255, 253, 225,255);</string>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
-     </property>
-     <property name="lineWidth">
-      <number>20</number>
-     </property>
-     <property name="midLineWidth">
-      <number>10</number>
-     </property>
-     <property name="verticalScrollBarPolicy">
-      <enum>Qt::ScrollBarAsNeeded</enum>
-     </property>
-     <property name="sizeAdjustPolicy">
-      <enum>QAbstractScrollArea::AdjustToContents</enum>
-     </property>
-     <property name="editTriggers">
-      <set>QAbstractItemView::NoEditTriggers</set>
-     </property>
-     <property name="alternatingRowColors">
-      <bool>true</bool>
-     </property>
-     <property name="textElideMode">
-      <enum>Qt::ElideLeft</enum>
-     </property>
-     <property name="showGrid">
-      <bool>true</bool>
-     </property>
-     <property name="sortingEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="cornerButtonEnabled">
-      <bool>true</bool>
-     </property>
-     <attribute name="horizontalHeaderVisible">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="horizontalHeaderCascadingSectionResizes">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="horizontalHeaderDefaultSectionSize">
-      <number>150</number>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
-     </attribute>
-     <attribute name="verticalHeaderCascadingSectionResizes">
-      <bool>false</bool>
-     </attribute>
-     <attribute name="verticalHeaderMinimumSectionSize">
-      <number>30</number>
-     </attribute>
-     <attribute name="verticalHeaderDefaultSectionSize">
-      <number>50</number>
-     </attribute>
-     <attribute name="verticalHeaderStretchLastSection">
-      <bool>false</bool>
-     </attribute>
-     <row>
-      <property name="text">
-       <string>Highland Street Garage</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Chem Parking</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Disco Park</string>
-      </property>
-     </row>
-     <column>
-      <property name="text">
-       <string># Free Spaces</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string># Taken Spaces</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Cost Per Hour</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string> # Paid Parking Spots</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>#Tanken Paid Parking Spots</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>New Column</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Accepted Passes</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Total Spots</string>
-      </property>
-     </column>
-     <item row="0" column="0">
-      <property name="text">
-       <string>85</string>
-      </property>
-     </item>
-     <item row="0" column="1">
-      <property name="text">
-       <string>90</string>
-      </property>
-     </item>
-     <item row="0" column="2">
-      <property name="text">
-       <string>$2.50</string>
-      </property>
-     </item>
-     <item row="0" column="6">
-      <property name="text">
-       <string>E, FS</string>
-      </property>
-     </item>
-     <item row="1" column="0">
-      <property name="text">
-       <string>Hell0</string>
-      </property>
-     </item>
-     <item row="1" column="1">
-      <property name="text">
-       <string>??</string>
-      </property>
-     </item>
-     <item row="1" column="2">
-      <property name="text">
-       <string>??</string>
-      </property>
-     </item>
-     <item row="1" column="6">
-      <property name="text">
-       <string>??</string>
-      </property>
-     </item>
-    </widget>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="lineWidth">
+    <number>20</number>
+   </property>
+   <property name="midLineWidth">
+    <number>10</number>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAsNeeded</enum>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>true</bool>
+   </property>
+   <property name="textElideMode">
+    <enum>Qt::ElideLeft</enum>
+   </property>
+   <property name="showGrid">
+    <bool>true</bool>
+   </property>
+   <property name="sortingEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="cornerButtonEnabled">
+    <bool>true</bool>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>150</number>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>30</number>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>50</number>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <row>
+    <property name="text">
+     <string>Highland Street Garage</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Chem Parking</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>Disco Park</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string># Free Spaces</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string># Taken Spaces</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Cost Per Hour</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string> # Paid Parking Spots</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>#Tanken Paid Parking Spots</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>New Column</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Accepted Passes</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Total Spots</string>
+    </property>
+   </column>
+   <item row="0" column="0">
+    <property name="text">
+     <string>85</string>
+    </property>
    </item>
-  </layout>
+   <item row="0" column="1">
+    <property name="text">
+     <string>90</string>
+    </property>
+   </item>
+   <item row="0" column="2">
+    <property name="text">
+     <string>$2.50</string>
+    </property>
+   </item>
+   <item row="0" column="6">
+    <property name="text">
+     <string>E, FS</string>
+    </property>
+   </item>
+   <item row="1" column="0">
+    <property name="text">
+     <string>Hell0</string>
+    </property>
+   </item>
+   <item row="1" column="1">
+    <property name="text">
+     <string>??</string>
+    </property>
+   </item>
+   <item row="1" column="2">
+    <property name="text">
+     <string>??</string>
+    </property>
+   </item>
+   <item row="1" column="6">
+    <property name="text">
+     <string>??</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="backButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

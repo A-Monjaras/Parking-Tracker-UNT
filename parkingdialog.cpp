@@ -15,3 +15,9 @@ ParkingDialog::~ParkingDialog()
 {
     delete ui;
 }
+
+void ParkingDialog::on_backButton_clicked()
+{
+
+}
+

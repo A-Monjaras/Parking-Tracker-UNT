@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "seconddialog.h"
 #include "parkingdialog.h"
+#include "mainwindow.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginPage; }
 QT_END_NAMESPACE
@@ -23,5 +24,6 @@ private:
     Ui::LoginPage *ui;
     secondDialog *secDialog;
     ParkingDialog *park;
+    MainWindow *main;
 };
 #endif // LOGINPAGE_H
