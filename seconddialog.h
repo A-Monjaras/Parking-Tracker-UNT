@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+
 namespace Ui {
 class secondDialog;
 }
@@ -15,7 +16,13 @@ public:
     explicit secondDialog(QWidget *parent = nullptr);
     ~secondDialog();
 
+private slots:
+
+
+
+
 private:
+
     Ui::secondDialog *ui;
 };
 

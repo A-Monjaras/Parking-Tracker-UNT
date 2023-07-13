@@ -54,7 +54,22 @@
      <height>520</height>
     </rect>
    </property>
+   <widget class="QLabel" name="untparking">
+    <property name="geometry">
+     <rect>
+      <x>138</x>
+      <y>5</y>
+      <width>660</width>
+      <height>510</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
+  <zorder>whitebottom2</zorder>
+  <zorder>greentop2</zorder>
  </widget>
  <resources/>
  <connections/>

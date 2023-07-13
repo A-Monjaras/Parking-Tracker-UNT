@@ -11,17 +11,41 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     loginpage.cpp \
-    seconddialog.cpp
+    mainwindow.cpp \
+    permitpage.cpp \
+    seconddialog.cpp \
+    CarProfile.cpp \
+    dialog.cpp \
+    License.cpp \
+    parkingdialog.cpp \
+    UserProfile.cpp
+
 
 HEADERS += \
     loginpage.h \
-    seconddialog.h
+    mainwindow.h \
+    permitpage.h \
+    seconddialog.h \
+    CarProfile.h \
+    dialog.h \
+    License.h \
+    parkingdialog.h \
+    UserProfile.h
+
 
 FORMS += \
     loginpage.ui \
-    seconddialog.ui
+    mainwindow.ui \
+    permitpage.ui \
+    seconddialog.ui \
+    dialog.ui \
+    parkingdialog.ui
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    logo.qrc
