@@ -15,15 +15,17 @@ Dialog::Dialog(UserProfile* userProfile, CarProfile* carProfile, LicenseProfile*
     , m_licenseProfile(licenseProfile)
 {
     ui->setupUi(this);
-    QPixmap pix(":/img/unts-genericnewsimage_unt.png");
+    QPixmap pix("D:/Software Engineering/unts-genericnewsimage_unt.png");
     ui->label_pic1->setPixmap(pix.scaled(300, 300, Qt::KeepAspectRatio));
     QQuickView view;
-    QQmlContext *context = ui->quickWidget->rootContext();
+    /*
+     * This code is being tested I might delete it later
+     * QQmlContext *context = ui->quickWidget->rootContext();
 
 
     context->setContextProperty("userProfile", m_userProfile);
     context->setContextProperty("carProfile", m_carProfile);
-    context->setContextProperty("licenseProfile", m_licenseProfile);
+    context->setContextProperty("licenseProfile", m_licenseProfile);*/
 
     view.setSource(QUrl::fromLocalFile("main.qml"));
     view.show();
