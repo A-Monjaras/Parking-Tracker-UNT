@@ -15,7 +15,7 @@ Dialog::Dialog(UserProfile* userProfile, CarProfile* carProfile, LicenseProfile*
     , m_licenseProfile(licenseProfile)
 {
     ui->setupUi(this);
-    QPixmap pix("D:/Software Engineering/unts-genericnewsimage_unt.png");
+    QPixmap pix(":/img/unts-genericnewsimage_unt.png");
     ui->label_pic1->setPixmap(pix.scaled(300, 300, Qt::KeepAspectRatio));
     QQuickView view;
     QQmlContext *context = ui->quickWidget->rootContext();
