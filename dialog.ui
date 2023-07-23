@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>810</width>
-    <height>655</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,24 +16,11 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QListWidget" name="listWidget">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>170</y>
-     <width>256</width>
-     <height>192</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-  </widget>
   <widget class="QListWidget" name="listWidget_2">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>130</y>
+     <y>110</y>
      <width>171</width>
      <height>41</height>
     </rect>
@@ -70,8 +57,8 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>370</y>
+     <x>90</x>
+     <y>340</y>
      <width>214</width>
      <height>156</height>
     </rect>
@@ -100,7 +87,7 @@
       <item>
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>ID</string>
+         <string>DOB</string>
         </property>
        </widget>
       </item>
@@ -128,7 +115,7 @@
       <item>
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>Car model:</string>
+         <string>EUID</string>
         </property>
        </widget>
       </item>
@@ -142,7 +129,7 @@
       <item>
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>License Plate:</string>
+         <string>Type</string>
         </property>
        </widget>
       </item>
@@ -158,8 +145,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>761</width>
-     <height>101</height>
+     <width>800</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -172,9 +159,9 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>530</y>
-     <width>761</width>
-     <height>101</height>
+     <y>520</y>
+     <width>800</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -183,14 +170,160 @@
 }</string>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="graphicsView_3">
+  <widget class="QLabel" name="untlogo">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>120</y>
-     <width>256</width>
-     <height>192</height>
+     <x>0</x>
+     <y>0</y>
+     <width>180</width>
+     <height>80</height>
     </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backtodash">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>25</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back to Dashboard</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>240</y>
+     <width>214</width>
+     <height>156</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Make</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_6">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Model</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_7"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Color</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_8"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Plate #</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_9"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <item>
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Year</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_10"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>180</y>
+     <width>341</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>                Car Information</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="profilePic">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>150</y>
+     <width>251</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>

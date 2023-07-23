@@ -1,30 +1,58 @@
 #include "seconddialog.h"
-#include "ui_seconddialog.h"
-#include <QPixmap>
+#include <QLabel>
 
-secondDialog::secondDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::secondDialog)
+SecondDialog::SecondDialog(QWidget *parent) : QDialog(parent)
 {
-    ui->setupUi(this);
-    QPixmap pix(":/img/unts-genericnewsimage_unt.png");
-    ui -> untlogo2  ->setPixmap(pix.scaled(180,80));
-    ui -> greentop2 -> setStyleSheet("background-color: #00853e;");
-    ui -> whitebottom2 -> setStyleSheet("background-color: #white;");
-
-
-
+    createLayout();
 }
 
-secondDialog::~secondDialog()
+SecondDialog::~SecondDialog()
 {
-    delete ui;
+    // Destructor code if needed
 }
 
-void secondDialog::on_pushButton_clicked()
+void SecondDialog::createLayout()
 {
-    hide();
-    park = new ParkingDialog(this);
-    park->show();
+    mainLayout = new QVBoxLayout(this);
+
+    // Create the table widget with 25 rows and 5 columns (excluding the "Directions" column)
+    tableWidget = new QTableWidget(25, 5, this);
+    mainLayout->addWidget(tableWidget);
+
+    // Add table headers
+    QStringList headerLabels = {"Lot Number", "Total Spots", "Available Spots", "Parking Type"};
+    tableWidget->setHorizontalHeaderLabels(headerLabels);
+
+    // Populate the table with sample data (you can replace this with your actual data)
+    for (int row = 0; row < 25; ++row) {
+        for (int col = 0; col < 4; ++col) {
+            // Create a custom widget for each cell
+            QWidget *widget = new QWidget();
+            QHBoxLayout *cellLayout = new QHBoxLayout(widget);
+
+            QLabel *label = new QLabel(QString("Row %1, Col %2").arg(row).arg(col));
+            cellLayout->addWidget(label);
+
+            cellLayout->setContentsMargins(0, 0, 0, 0);
+            cellLayout->setSpacing(0);
+            widget->setLayout(cellLayout);
+
+            tableWidget->setCellWidget(row, col, widget);
+        }
+
+        // Add the "Get Directions" button for each row in the last column
+        QPushButton *button = new QPushButton("Get Directions");
+        connect(button, &QPushButton::clicked, [this, row]() { onGetDirectionsButtonClicked(row); });
+        tableWidget->setCellWidget(row, 4, button);
+    }
+
+    // Set the header for the "Directions" column explicitly
+    QTableWidgetItem *directionsHeader = new QTableWidgetItem("Directions");
+    tableWidget->setHorizontalHeaderItem(4, directionsHeader);
 }
 
+void SecondDialog::onGetDirectionsButtonClicked(int row)
+{
+    // Handle the "Get Directions" button click for the specified row here
+    qDebug() << "Get Directions clicked for row" << row;
+}

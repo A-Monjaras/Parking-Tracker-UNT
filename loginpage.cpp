@@ -1,7 +1,8 @@
 #include "loginpage.h"
-#include "ui_loginpage.h"
 #include <QPixmap>
 #include <QMessageBox>
+#include "ui_loginpage.h"
+
 
 LoginPage::LoginPage(QWidget *parent)
     : QMainWindow(parent)
@@ -22,19 +23,22 @@ LoginPage::LoginPage(QWidget *parent)
     ui->manageID->setTextInteractionFlags(Qt::TextBrowserInteraction);
     ui->manageID->setOpenExternalLinks(true);
 
-    QString stuNumber= "(940) 369-7392";
-    ui->stuhdnum->setText("<a href=\"tel:" + stuNumber  + "\">" + stuNumber + "</a>");
+    QString stuNumber = "(940) 369-7392";
+    ui->stuhdnum->setText("<a href=\"tel:" + stuNumber + "\">" + stuNumber + "</a>");
     ui->stuhdnum->setTextFormat(Qt::RichText);
     ui->stuhdnum->setTextInteractionFlags(Qt::TextBrowserInteraction);
     ui->stuhdnum->setOpenExternalLinks(true);
 
-    QString facNumber= "(940) 369-2324";
-    ui->fachdnum->setText("<a href=\"tel:" + facNumber + "\">" + facNumber+ "</a>");
+    QString facNumber = "(940) 369-2324";
+    ui->fachdnum->setText("<a href=\"tel:" + facNumber + "\">" + facNumber + "</a>");
     ui->fachdnum->setTextFormat(Qt::RichText);
     ui->fachdnum->setTextInteractionFlags(Qt::TextBrowserInteraction);
     ui->fachdnum->setOpenExternalLinks(true);
 
+    ui->idtextbox_password->setEchoMode(QLineEdit::Password);
 
+    // Connect the showPassword button clicked signal to the togglePasswordVisibility slot
+    connect(ui->showPassword, &QPushButton::clicked, this, &LoginPage::togglePasswordVisibility);
 }
 
 LoginPage::~LoginPage()
@@ -42,6 +46,34 @@ LoginPage::~LoginPage()
     delete ui;
 }
 
+QString LoginPage::hashPassword(const QString& password) {
+    // Use a cryptographic hash function (e.g., SHA-256) to hash the password
+    QByteArray passwordData = password.toUtf8();
+    QByteArray hashedData = QCryptographicHash::hash(passwordData, QCryptographicHash::Sha256);
+
+    // Convert the hashed data to a hexadecimal string
+    QString hashedPassword = QString(hashedData.toHex());
+    return hashedPassword;
+}
+
+void LoginPage::updatePasswordVisibility() {
+    // Update the echo mode of the password line edit based on the state of the radio button
+    if (ui->showPassword->isChecked()) {
+        ui->idtextbox_password->setEchoMode(QLineEdit::Normal);
+    } else {
+        ui->idtextbox_password->setEchoMode(QLineEdit::Password);
+    }
+}
+
+void LoginPage::togglePasswordVisibility() {
+    // Invert the password visibility state and update the echo mode
+    passwordVisible = !passwordVisible;
+    if (passwordVisible) {
+        ui->idtextbox_password->setEchoMode(QLineEdit::Normal);
+    } else {
+        ui->idtextbox_password->setEchoMode(QLineEdit::Password);
+    }
+}
 
 void LoginPage::on_loginbutton_clicked()
 {
@@ -51,14 +83,14 @@ void LoginPage::on_loginbutton_clicked()
     qDebug() << "Username:" << username;
     qDebug() << "Password:" << password;
 
-    // Create an instance of the DatabaseManager
-    DatabaseManager dbManager;
-
     // Connect to the database
-    if (!dbManager.connect()) {
+    if (!dbManager->connect()) {
         qDebug() << "Failed to connect to the database.";
         return;
     }
+
+    //Hide the password with the hashing function
+    QString hashedPassword = hashPassword(password);
 
     // Create the SQL query to select the user's data based on the euid (username) and password
     QString selectQuery = QString("SELECT * FROM users WHERE euid = '%1' AND password = '%2'")
@@ -66,7 +98,7 @@ void LoginPage::on_loginbutton_clicked()
                               .arg(password);
 
     // Execute the query using the DatabaseManager instance
-    QVector<QVector<QVariant>> result = dbManager.executeQuery(selectQuery);
+    QVector<QVector<QVariant>> result = dbManager->executeQuery(selectQuery);
 
     qDebug() << "Result Rows:" << result.size();
 
@@ -75,10 +107,31 @@ void LoginPage::on_loginbutton_clicked()
         // Login successful
         QMessageBox::information(this, "Login", "Login Successful");
         hide();
-        secDialog = new secondDialog(this);
-        secDialog->show();
+
+        // Get the singleton instance of UserDatabase
+        UserDatabase* loggedInUser = UserDatabase::getInstance();
+        loggedInUser->initializeUserData(
+            result[0][0].toInt(),
+            result[0][1].toString().toStdString(),
+            result[0][2].toString().toStdString(),
+            result[0][3].toString().toStdString(),
+            result[0][4].toString().toStdString(),
+            result[0][5].toString().toStdString(),
+            result[0][6].toString().toStdString(),
+            result[0][7].toString().toStdString(),
+            result[0][8].toString().toStdString(),
+            result[0][9].toString().toStdString(),
+            result[0][10].toString().toStdString(),
+            result[0][11].toString().toStdString(),
+            result[0][12].toByteArray()
+            );
+
+        // Create an instance of MainWindow with the logged-in user's data
+        MainWindow* main = new MainWindow(this);
+        main->show();
     } else {
         // Login unsuccessful
-        QMessageBox::warning(this, "Login", "Login Failed");
+        QMessageBox::warning(this, "Login", "Incorrect EUID or Password");
+        ui -> idtextbox_password->clear();
     }
 }

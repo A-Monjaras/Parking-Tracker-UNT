@@ -1,7 +1,9 @@
 #ifndef DIALOG_H
 #define DIALOG_H
+#include "userdatabase.h"
 
 #include <QDialog>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
@@ -13,10 +15,16 @@ class Dialog : public QDialog
 
 public:
     Dialog(QWidget *parent = nullptr);
+    Dialog();
     ~Dialog();
     void ChangeText();
 
+private slots:
+
+
+
 private:
     Ui::Dialog *ui;
+
 };
 #endif // DIALOG_H

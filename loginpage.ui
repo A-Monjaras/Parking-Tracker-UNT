@@ -33,19 +33,6 @@
      <string>LOGIN</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="kmsi">
-    <property name="geometry">
-     <rect>
-      <x>411</x>
-      <y>331</y>
-      <width>131</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Keep me signed in</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="greenTop" native="true">
     <property name="geometry">
      <rect>
@@ -123,9 +110,35 @@
       <string>Faculty</string>
      </property>
     </widget>
+    <widget class="QRadioButton" name="showPassword">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>130</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Show Password</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>true</bool>
+     </property>
+    </widget>
     <zorder>manageID</zorder>
     <zorder>fachdnum</zorder>
     <zorder>stuhdnum</zorder>
+    <zorder>showPassword</zorder>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -196,7 +209,6 @@
    </widget>
    <zorder>whiteBack</zorder>
    <zorder>loginbutton</zorder>
-   <zorder>kmsi</zorder>
    <zorder>greenTop</zorder>
    <zorder>layoutWidget</zorder>
   </widget>
@@ -206,7 +218,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

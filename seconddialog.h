@@ -1,27 +1,29 @@
+// seconddialog.h
+
 #ifndef SECONDDIALOG_H
 #define SECONDDIALOG_H
 
 #include <QDialog>
-#include "parkingdialog.h"
+#include <QTableWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
 
-namespace Ui {
-class secondDialog;
-}
-
-class secondDialog : public QDialog
+class SecondDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit secondDialog(QWidget *parent = nullptr);
-    ~secondDialog();
-
-private slots:
-    void on_pushButton_clicked();
+    explicit SecondDialog(QWidget *parent = nullptr);
+    ~SecondDialog();
 
 private:
-    Ui::secondDialog *ui;
-    ParkingDialog *park;
+    void createLayout();
+
+    QTableWidget *tableWidget;
+    QVBoxLayout *mainLayout;
+
+private slots:
+    void onGetDirectionsButtonClicked(int row);
 };
 
 #endif // SECONDDIALOG_H

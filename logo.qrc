@@ -1,5 +1,10 @@
 <RCC>
     <qresource prefix="/img">
         <file>unts-genericnewsimage_unt.png</file>
+        <file>untparkingmap.png</file>
+	<file>clemPic.jpg</file>
+	<file>vincentPic.jpg</file>
+	<file>defaultProfilePic.jpg</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>
